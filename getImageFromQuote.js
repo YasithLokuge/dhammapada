@@ -8,7 +8,7 @@ module.exports = function (message) {
       url: 'https://api.ritekit.com/v1/images/quote',
       qs:
        { quote: message,
-         brandLogo: 'https://thumb.ibb.co/cL9xpU/dhamma_wheel.png',
+         brandLogo: 'https://thumb.ibb.co/gagSpU/dhamma_wheel.jpg',
          client_id: process.env.RITEKIT_CLIENT_ID
        },
     };
@@ -17,6 +17,7 @@ module.exports = function (message) {
      // Do async job
         request.get(options, function(error, response, body) {
             if (error) {
+                console.log("error in rite kit request :" + error);
                 reject(error);
             } else {
                 console.log("rite kit response : " + body);
